@@ -1,0 +1,132 @@
+.Login_Container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .Login_Center_Box{
+        border: 1px solid rgb(189, 183, 183);
+        box-sizing: border-box;
+        width: 56%;
+        height: 90%;
+        display: flex;
+        border-radius: 2%;
+        padding: 30px;
+       
+    }
+    .Login_Left_box{
+       // border: 1px solid red;
+        width: 50%;
+        height: 100%;
+    }
+    .Login_Right_Box{
+       // border: 1px solid blue;
+        width: 50%;
+        height: 100%;
+    }
+    .immm{
+        width: 100px;
+        height: 100px;
+    }
+    .Login_Left_box_Top{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+     
+    }
+    .Login_Left_Box_Name{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 25px;    
+    }
+    .Name_Input{
+        width: 50%;
+        ::ng-deep{
+            width: 48%;
+        }
+    }
+    
+    
+    .Email_Input{
+    width: 100%;
+    }
+    .Password_Input{
+       
+        ::ng-deep{
+            width: 48%;
+           
+        }
+    }
+    .Login_Password_align{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .Login_Left_box_Cred{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    
+    }
+    
+    .Login_Left_box_Cred>div>input{
+        height: 10px;
+    }
+    .Login_Left_footer{
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .Login_Right_Box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    
+    }
+    .email_p1{
+        font-size: small;
+        color: rgb(102, 99, 99);
+      
+       
+    }
+    .email_p1>p{
+        margin-left: 10px;
+        margin-top: -18px;
+    }
+    .email_p2{
+        color:#1a73e8;
+        font-weight: 500;
+    }
+    .Password_p1{
+        font-size: small;
+        color:  rgb(102, 99, 99);
+        
+    }
+    .Password_p1>p{
+        margin-top: 7px;
+        margin-left: 10px;
+    
+    }
+    .mat-form-field-appearance-outline.mat-form-field-flex {
+        height: 10px;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 1em 0 1em 0;
+        height: 5px;
+    }
+//     @media only screen and (min-width: 400px) {
+//       .Login_Right_Box{
+//     display: none;
+// }
+// .Login_Left_box{
+//           width: 100%;
+
+//       }
+//     }
