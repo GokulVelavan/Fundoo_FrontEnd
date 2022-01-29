@@ -1,0 +1,25 @@
+<div class="Make_Note_wrapper">
+    <mat-accordion class="Make_Note">
+      <form [formGroup]="noteForm" (ngSubmit)="sendNotes()">
+      <mat-expansion-panel class="Make_Note_panal" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            <input placeholder="Title" formControlName="Title" class="Make_Note_input"/>
+          </mat-panel-description>
+          <mat-icon >push_pin</mat-icon>
+          <!-- <mat-icon >check_box</mat-icon>
+         <mat-icon>edit</mat-icon>
+          <mat-icon>image</mat-icon> -->
+        </mat-expansion-panel-header>
+        <textarea formControlName="Message" placeholder="Take a Note" class="Make_Note_input_text"></textarea>
+        <div class="icons_wrapper">
+      <app-icons>
+      </app-icons>  
+      
+    <button mat-raised-button  type="submit">Close</button>
+
+    </div>
+    </mat-expansion-panel>
+      </form>
+    </mat-accordion>
+  </div>

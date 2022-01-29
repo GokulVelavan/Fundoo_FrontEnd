@@ -43,6 +43,8 @@
     color:#1a73e8;
     font-weight:500;
     font-size:15px;
+    cursor: pointer;
+
 }
 
 .Login_Bottom_Container{
@@ -53,6 +55,7 @@ width: 100%;
 }
 .footer_p1{
     color: #1a73e8;
+    cursor: pointer;
 }
 .Paragraph{
     margin-bottom: 20px;
@@ -60,4 +63,11 @@ width: 100%;
 }
 .Paragraph>p>span{
     color: #1a73e8;
+}
+.Header_Name>p{
+    font-size:25px;
+    font-weight:bolder ;
+    background:linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+    -webkit-background-clip:text;   
+     -webkit-text-fill-color:transparent;     
 }

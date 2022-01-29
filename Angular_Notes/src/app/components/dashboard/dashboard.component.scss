@@ -1,0 +1,146 @@
+.Container{
+    width: 100vw;
+    height: auto;
+    background-color: #202124;
+}
+.header{
+    border-bottom: 0.5px solid #ffffff;
+    height: 10vh;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.example-form-field {
+    display: flex;
+    align-items: center;
+  }
+  .header_keep{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      margin-right: 150px;
+      color: #ffffff;
+  }
+  .header_keep>h1{
+    box-sizing: border-box;
+    margin-top: 15px;
+  }
+  .search{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+color: #ffffff;
+       height: 100%;
+       width: 50%;
+       box-sizing: border-box;
+       padding: 10px;
+       border-radius: 5px;
+       background-color:#525355;
+    }
+  .search>input{
+          width: 100%;
+          height: 100%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+color: #ffffff;
+font-size: large;
+
+  }
+  
+  .search_Icon{
+   font-size:25px ;
+   border: none;
+
+  }
+  .header_icons{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 15%;
+      height: 100%;
+    color: #98989a;
+
+  }
+  .header_icons_2{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 15%;
+    height: 100%;
+    color: #98989a;
+  }
+  .Content{
+    height: 90vh;
+    
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    position: absolute;
+    
+  }
+  
+.example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 1;
+    background-color: #202124;
+
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+    background-color: #202124;
+
+   // margin-left: 50px;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+
+
+  }
+  .sidnav_icons{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 60%;
+      background-color: #202124;
+      color: #ffffff;
+ 
+  }
+  .somthing{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 61%;
+    color: white;
+  }
+  .Note_Containr{
+height: 90vh;
+display: flex;
+align-items: center;
+justify-content:start;
+flex-direction: column;
+width: auto;
+padding-top: 20px;
+  }
+  .display_note_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .crate_container{
+    width: 40%;
+  }

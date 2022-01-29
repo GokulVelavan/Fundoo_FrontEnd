@@ -1,0 +1,62 @@
+<div class="Container">
+  <!-- Header_Compent starts -->
+<div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+  <button mat-icon-button (click)="snav.toggle()" class="menu-button">
+        <mat-icon class="header_keep">menu</mat-icon>
+      </button>
+     <div  class="header_keep" >
+         <img src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"/>
+         <h1>keep</h1>
+     </div>
+     <div class="search" >
+      <button mat-icon-button>
+        <mat-icon class="search_Icon" >search</mat-icon>
+      </button>
+              <input matInput type="text" placeholder="Search" style="color: white;" [(ngModel)]="value">
+            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon class="search_Icon">close</mat-icon>
+            </button>
+     </div>
+     <div class="header_icons">
+        <mat-icon >refresh</mat-icon>
+        <mat-icon >view_agenda</mat-icon>
+        <mat-icon >settings</mat-icon>
+     </div>
+     <div class="header_icons_2">
+      <mat-icon >view_comfy</mat-icon>
+     </div>
+</div>
+<!-- Header-Component ends -->
+<div class="Content">
+<div class="somthing">
+  <mat-icon>lightbulb</mat-icon>
+  <mat-icon>notifications</mat-icon>
+  <mat-icon>edit</mat-icon>
+  <mat-icon>archive</mat-icon>
+  <mat-icon>delete</mat-icon>
+</div>
+      <mat-sidenav-container  class="example-sidenav-container"
+  [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+<mat-sidenav style="background-color: #202124" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+[fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+<mat-nav-list class="sidnav_icons">
+  <p>Remainder</p>
+  <p>Notifications</p>
+  <p>Edit</p>
+  <p>Archive</p>
+  <p>Delete</p>
+</mat-nav-list>
+</mat-sidenav>
+<mat-sidenav-content>
+</mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+<div class="Note_Containr">
+  <app-create-note class="crate_container" >
+
+  </app-create-note>
+  <app-display-note class="display_note_container">
+
+  </app-display-note>
+</div>
+</div>
