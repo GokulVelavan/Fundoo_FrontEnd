@@ -1,5 +1,8 @@
 <div class="display_note">
-<app-get-all-notes class="kk">
 
-</app-get-all-notes>
+    <div  *ngFor="let data of Notes"   class="get_all_notes" [style.background]="data.color">
+        <h1 (click)="openDialog(data)">{{data.title}}</h1>
+        <p (click)="openDialog(data)">{{data.message}}</p>
+        <app-icons (changeColorOfNote)="(colorMessageReceived)" [cardData]="data" ></app-icons>
+    </div>
 </div>

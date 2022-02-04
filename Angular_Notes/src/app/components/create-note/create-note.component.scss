@@ -1,43 +1,84 @@
-.Make_Note_wrapper{
-    border: 0.5px solid #ffffff;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 60%), 0 2px 6px 2px rgb(0 0 0 / 30%);
-    border-radius: 5px;
-    width: 100%;
-    height: auto;
-  }
-  .Make_Note_panal{
-    background-color: transparent;
-      height: 100%;
-  }
-  .Make_Note_input_text{
-    width: 100%;
-    border: none;
-    outline: none;
-    height: auto;
-    background-color: transparent;
-    color: #ffffff;
-    font-size: larger;
-font-weight: 300;
-  }
-  .Make_Note{
-    background-color: #202124;
-    
-  }
-  .Make_Note_input{
-width: 100%;
-border: none;
-outline: none;
-color: #ffffff;
-font-size: large;
-font-weight: 400;
-background-color: transparent;
 
-  }
-  .icons_wrapper{
+ .create{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+ }
+ 
+  form{
+      position: relative;
+      width: 600px;
+      margin: 32px auto 50px auto;
+      padding: 7px;
+      border-radius: 7px;
+   }
+    
+    form input{
+      width: 100%;
+      border: none;
+      margin-bottom: 20px;
+      outline: none;
+      font-size: 1rem;
+      resize: none;
+    }
+    
+    form textarea{
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      resize: none;
+    }
+  
+    button{
+        margin: 14px;
+    }
+   
+    .input {
+      width: 100%;
+      font-size: 16px;
+      background-color: transparent;
+      border: 0px solid;
+      min-height: 10px;
+      outline: none;
+      
+    }
+  
+    ._matcard{
+      border-radius: 8px;
+      border: 0.5px solid white;
+      height: 40px;
+      width: 600px;
+      display: flex;
+      align-items: center; 
+      margin-left: 34%;
+      margin: 32px auto 50px auto;
+    box-shadow: 0 1px 7px rgb(126, 124, 124);
+
+    }
+  
+    .close{
+      margin: 100px;
+    }
+    .border {
+      border: 5px solid transparent;
+      height: 20px;
+      width: 100%;
+      top: 20px;
       display: flex;
       align-items: center;
-      justify-content: space-around;
-  }
-  .icons_wrapper>app-icons{
-      width:80%;
-  }
+      justify-content: space-between;
+      background-color: transparent
+    }
+    
+    .input_{
+      background:transparent;
+      font-size:larger;
+      font-weight:700;
+    }
+    .icons{
+      width: 70%;
+
+    }

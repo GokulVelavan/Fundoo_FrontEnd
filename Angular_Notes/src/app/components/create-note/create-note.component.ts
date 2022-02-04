@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userservice/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,10 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./create-note.component.scss']
 })
 export class CreateNoteComponent implements OnInit {
+  @Output() RefreshEvent = new EventEmitter<string>();
   notes:any;
   noteForm:FormGroup;
   token:any;
-  
+  card: boolean = false;
+
   constructor(private activateRoute:ActivatedRoute,private formBuilder: FormBuilder,private userService:UserService) { }
 
   ngOnInit(): void {
@@ -21,9 +23,11 @@ export class CreateNoteComponent implements OnInit {
       Title: ['', Validators.required],
       Message: ['', Validators.required],
   });
-  this.token= this.activateRoute.snapshot.paramMap.get('token'); // allParams is an object
+  }
 
-   
+  cardSwap() {
+    console.log(this.card);
+    return this.card === true ? (this.card = false) : (this.card = true);
   }
   sendNotes(){
     if(this.noteForm.valid){
@@ -31,8 +35,13 @@ var reqData={
   title: this.noteForm.value.Title,
   message: this.noteForm.value.Message,
   }
-  this.userService.sendNotes(reqData,this.token).subscribe((result:any)=>{
-    console.log(result);
+  console.log(reqData);
+  this.userService.sendNotes(reqData,localStorage.getItem("token")).subscribe((result:any)=>{
+    if(result.success==true)
+    {
+      this.RefreshEvent.emit(result);
+      console.log(result);
+    }
     
   })
   }else{

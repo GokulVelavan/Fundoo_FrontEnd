@@ -1,5 +1,4 @@
-<div *ngFor="let data of notes.data" class="get_all_notes">
-<h1>{{data.title}}</h1>
-<p>{{data.message}}</p>
-<app-icons></app-icons>
+<div class="Note_wrapper">
+<app-create-note (RefreshEvent)="RefreshDashboard($event)"></app-create-note>
+<app-display-note [Notes]="notes"></app-display-note>
 </div>

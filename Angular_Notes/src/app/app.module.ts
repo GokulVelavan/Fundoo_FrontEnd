@@ -23,6 +23,13 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { CreateNoteComponent } from './components/create-note/create-note.component';
 import { DisplayNoteComponent } from './components/display-note/display-note.component';
 import { IconsComponent } from './components/icons/icons.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateComponentComponent } from './components/update-component/update-component.component';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { TrashComponent } from './components/trash/trash.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,14 +41,17 @@ import { IconsComponent } from './components/icons/icons.component';
     GetAllNotesComponent,
     CreateNoteComponent,
     DisplayNoteComponent,
-    IconsComponent
+    IconsComponent,
+    UpdateComponentComponent,
+    TrashComponent,
+    ArchiveComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,MatFormFieldModule,MatInputModule,MatIconModule,MatCheckboxModule,MatButtonModule,FormsModule,
-    ReactiveFormsModule,HttpClientModule,
-    BrowserModule,FlexLayoutModule,MatSidenavModule,MatListModule,MatExpansionModule
+    ReactiveFormsModule,HttpClientModule,MatMenuModule,
+    BrowserModule,FlexLayoutModule,MatSidenavModule,MatListModule,MatExpansionModule,MatCardModule,MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,10 +14,17 @@ postService(url:string='',payload:any={},tokenRequired:boolean=false,httpAuthOpt
 }
 
 
-putService(url:string='',payload:any={},tokenRequired:boolean=false,httpAuthOption:any={}){}
+putService(url:string='',payload:any={},tokenRequired:boolean=false,httpAuthOption:any={}){
+  return this.http.put(this.BaseUrl+url,payload,tokenRequired&&httpAuthOption)
+
+
+}
 getService(url:string='',tokenRequired:boolean=false,httpAuthOption:any={}){
  return this.http.get(this.BaseUrl+url,tokenRequired&&httpAuthOption)
 
 }
-deleteService(url:string='',tokenRequired:boolean=false,httpAuthOption:any={}){}
+deleteService(url:string='',tokenRequired:boolean=false,httpAuthOption:any={}){
+ return this.http.delete(this.BaseUrl+url,tokenRequired&&httpAuthOption)
+
+}
 }

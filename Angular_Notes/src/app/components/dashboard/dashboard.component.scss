@@ -1,13 +1,25 @@
 .Container{
     width: 100vw;
     height: auto;
-    background-color: #202124;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .header{
     border-bottom: 0.5px solid #ffffff;
     height: 10vh;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 5px;
+    width: 100%;
 }
 
 .example-form-field {
@@ -20,7 +32,6 @@
       justify-content: center;
       box-sizing: border-box;
       margin-right: 150px;
-      color: #ffffff;
   }
   .header_keep>h1{
     box-sizing: border-box;
@@ -30,13 +41,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-color: #ffffff;
        height: 100%;
        width: 50%;
        box-sizing: border-box;
        padding: 10px;
        border-radius: 5px;
-       background-color:#525355;
+       border: 1px solid black;
     }
   .search>input{
           width: 100%;
@@ -44,7 +54,6 @@ color: #ffffff;
           border: none;
           outline: none;
           background-color: transparent;
-color: #ffffff;
 font-size: large;
 
   }
@@ -72,75 +81,105 @@ font-size: large;
     color: #98989a;
   }
   .Content{
-    height: 90vh;
-    
     box-sizing: border-box;
+    height: 100%;
     padding: 5px;
     display: flex;
-    position: absolute;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+.Note_Containr{
+display: flex;
+
+align-items: flex-start;
+justify-content:center;
+width: 80vw;
+height: 100%;
+  }
+  
+
+  /////@at-root
+  .nav-list{
+    width: 400;
+}
+mat-sidenav{
+    width: 10em;
+}
+.menu-container {
+    border-top: 80px;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  mat-sidenav-content {
+    position: relative;
+    display: block;
+    height: 100%;
+    overflow: auto;
+  }
+  #sidenav-button:focus {
+    background-color: rgba(255, 196, 0, 0.2);
+    margin-top: 2px;
+    border-top-right-radius: 30vh;
+    border-bottom-right-radius: 30vh;
+    width: 240px;
+  }
+  #sidenav-button {
+    border-top-right-radius: 30vh;
+    border-bottom-right-radius: 30vh;
+    width: 240px;
+    height: 50px;
+    font-size: 20px;
+    opacity: 0.9;
+  }
+  mat-nav-list {
+    margin-left: -22px;
+  }
+  #sidenav-button {
+    display: inline-flex;
+    justify-content: space-between;
     
   }
-  
-.example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 1;
-    background-color: #202124;
-
+  #sidenav-icon {
+    margin-right: 30px;
+    margin-left: 8.9px;
+    opacity: 0.6;
+    font-size: 30px;
   }
-  
-  h1.example-app-name {
-    margin-left: 8px;
+  #sidenav.menu-close{
+    width: 70px;
+    height: 100vh;
+    transition: 0.2s;
   }
-  
-  .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-    background-color: #202124;
-
-   // margin-left: 50px;
+  #sidenav.menu-open{
+    width: 240px;
+    transition: 0.2s;
   }
-  
-  .example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-
-
+  mat-sidenav-container{
+    height: 88vh;
+    background: #fff;
   }
-  .sidnav_icons{
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-direction: column;
-      height: 60%;
-      background-color: #202124;
-      color: #ffffff;
- 
-  }
-  .somthing{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  .menu-button{
+    color: grey;
     flex-direction: column;
-    height: 61%;
-    color: white;
   }
-  .Note_Containr{
-height: 90vh;
-display: flex;
-align-items: center;
-justify-content:start;
-flex-direction: column;
-width: auto;
-padding-top: 20px;
+  mat-sidenav{
+    width: 240px;
+    background-color: transparent;
+    border: none;
   }
-  .display_note_container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .image-container{
+    width: 45;
   }
-  .crate_container{
-    width: 40%;
+  .three-icons1{
+    padding-left: 200px;
+    opacity: 0.6;
+  }
+  .three-icons2{
+    padding-left: 30px;
+    opacity: 0.6;
+  }
+  .three-icons3{
+    padding-left: 30px;
+    opacity: 0.6;
   }

@@ -28,7 +28,7 @@ if(this.loginForm.valid){
   this.userService.userLogin(reqData).subscribe((result:any)=>{
     localStorage.setItem("token",result._token);
     console.log(result);
-    this.router.navigate(['/dashboard/'+result._token])
+    this.router.navigate(['/dashboard'])
   },err=>console.log(err))
 }
 }

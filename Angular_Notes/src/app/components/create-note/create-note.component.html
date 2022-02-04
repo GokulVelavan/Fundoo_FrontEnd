@@ -1,25 +1,22 @@
-<div class="Make_Note_wrapper">
-    <mat-accordion class="Make_Note">
-      <form [formGroup]="noteForm" (ngSubmit)="sendNotes()">
-      <mat-expansion-panel class="Make_Note_panal" hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-description>
-            <input placeholder="Title" formControlName="Title" class="Make_Note_input"/>
-          </mat-panel-description>
-          <mat-icon >push_pin</mat-icon>
-          <!-- <mat-icon >check_box</mat-icon>
-         <mat-icon>edit</mat-icon>
-          <mat-icon>image</mat-icon> -->
-        </mat-expansion-panel-header>
-        <textarea formControlName="Message" placeholder="Take a Note" class="Make_Note_input_text"></textarea>
-        <div class="icons_wrapper">
-      <app-icons>
-      </app-icons>  
+<div class="create">
+  <mat-card *ngIf="!card" class="_matcard">
+    <input placeholder="Take a note..." class="input" (click)="cardSwap()" />
+</mat-card>
+<mat-card class="list-view-mat-card" *ngIf="card">
+  <form [formGroup]="noteForm" (ngSubmit)="sendNotes()">
+      <input type="text" class="input_" placeholder="Title" name="title" formControlName="Title">
+      <p>
+          <textarea name="content" class="input_" placeholder="Take a note" formControlName="Message"></textarea>
+      </p>
       
-    <button mat-raised-button  type="submit">Close</button>
+      <div class="border">
+        <app-icons class="icons" >
+        </app-icons> 
+          <button mat-stroked-button class="close" (click)="sendNotes()" (click)="cardSwap()" type="submit" >
+              Close
+          </button>
+      </div>
+  </form>
+</mat-card>
 
-    </div>
-    </mat-expansion-panel>
-      </form>
-    </mat-accordion>
-  </div>
+   </div>

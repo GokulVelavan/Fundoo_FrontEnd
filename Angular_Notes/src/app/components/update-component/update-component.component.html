@@ -1,0 +1,13 @@
+  <form>
+    <input name="title" [(ngModel)]="title" />
+    <p>
+      <textarea name="content" [(ngModel)]="message"></textarea>
+    </p>
+    <div class="border" fxlayout="row" fxLayoutAlign="space-between center" fxLayout.xs="row">
+    <app-icons class="icon"></app-icons>
+    <button mat-stroked-button class="close" (click)="update()" type="submit" >
+        Close
+    </button>
+    </div>
+
+    </form>

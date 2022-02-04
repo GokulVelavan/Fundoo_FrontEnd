@@ -1,7 +1,8 @@
 <div class="Container">
   <!-- Header_Compent starts -->
 <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
-  <button mat-icon-button (click)="snav.toggle()" class="menu-button">
+    <button mat-icon-button (click)="onToolbarMenuToggle()"
+    class="menu-button">     
         <mat-icon class="header_keep">menu</mat-icon>
       </button>
      <div  class="header_keep" >
@@ -12,7 +13,7 @@
       <button mat-icon-button>
         <mat-icon class="search_Icon" >search</mat-icon>
       </button>
-              <input matInput type="text" placeholder="Search" style="color: white;" [(ngModel)]="value">
+              <input matInput type="text" placeholder="Search"  [(ngModel)]="value">
             <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
               <mat-icon class="search_Icon">close</mat-icon>
             </button>
@@ -28,35 +29,49 @@
 </div>
 <!-- Header-Component ends -->
 <div class="Content">
-<div class="somthing">
-  <mat-icon>lightbulb</mat-icon>
-  <mat-icon>notifications</mat-icon>
-  <mat-icon>edit</mat-icon>
-  <mat-icon>archive</mat-icon>
-  <mat-icon>delete</mat-icon>
-</div>
-      <mat-sidenav-container  class="example-sidenav-container"
-  [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-<mat-sidenav style="background-color: #202124" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-[fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-<mat-nav-list class="sidnav_icons">
-  <p>Remainder</p>
-  <p>Notifications</p>
-  <p>Edit</p>
-  <p>Archive</p>
-  <p>Delete</p>
-</mat-nav-list>
-</mat-sidenav>
-<mat-sidenav-content>
-</mat-sidenav-content>
-</mat-sidenav-container>
-</div>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav mode="side" id="sidenav"  [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" opened>
+          <div class="menu-container">
+              <mat-nav-list>
+                  <div mat-button id="sidenav-button">
+                    <button mat-button id="sidenav-button" (click)="Notes()">
+                        <mat-icon id="sidenav-icon">lightbulb</mat-icon>
+                        Notes
+                    </button>
+                  </div>
+                  <div>
+                      <button mat-button id="sidenav-button">
+                          <mat-icon id="sidenav-icon">notifications</mat-icon>
+                          Reminder
+                      </button>
+                  </div>
+                  <div>
+                      <button mat-button id="sidenav-button">
+                          <mat-icon id="sidenav-icon">edit</mat-icon>
+                          Edit Labels
+                      </button>
+                  </div>
+                  <div>
+                    <button mat-button id="sidenav-button" fxLayout="row" (click)="Archive()">
+                        <mat-icon id="sidenav-icon">archive</mat-icon>
+                        Archive
+                    </button>
+                  </div>
+                  <div>
+                    <button mat-button id="sidenav-button" fxLayout="row" (click)="Trash()">
+                        <mat-icon id="sidenav-icon">delete</mat-icon>
+                        Trash
+                    </button>
+                  </div>
+              </mat-nav-list>
+          </div>
+      </mat-sidenav>
+    </mat-sidenav-container>
 <div class="Note_Containr">
-  <app-create-note class="crate_container" >
-
-  </app-create-note>
-  <app-display-note class="display_note_container">
-
-  </app-display-note>
+  <router-outlet>
+    
+  </router-outlet>
+  
+</div>
 </div>
 </div>

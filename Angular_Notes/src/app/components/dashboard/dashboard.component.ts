@@ -17,29 +17,16 @@ export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
    noteForm:FormGroup;
    token:any;
-
-  constructor(changeDetectorRef: ChangeDetectorRef,private activateRoute:ActivatedRoute, media: MediaMatcher,private formBuilder: FormBuilder,private userService:UserService) {
+   isMenuOpen=true;
+   contentMargin=240;
+  constructor(private route:Router,changeDetectorRef: ChangeDetectorRef,private activateRoute:ActivatedRoute, media: MediaMatcher,private formBuilder: FormBuilder,private userService:UserService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
   ngOnInit(): void {
-    this.noteForm = this.formBuilder.group({
-      Title: ['', Validators.required],
-      Message: ['', Validators.required],
-      Pic: ['', Validators.required],
-      
-      // Remainder: ['', Validators.required],
-      // Color: ['', Validators.required],
-      // Image: ['', Validators.required],
-      // IsArchive: ['', Validators.required],
-      // IsPin: ['', Validators.required],
-      // IsTrash: ['', Validators.required],
-     
-  });
-  this.token= this.activateRoute.snapshot.paramMap.get('token'); // allParams is an object
-    
+   
   }
  
   value = ' ';
@@ -49,6 +36,25 @@ export class DashboardComponent implements OnInit {
 
   shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 
+  onToolbarMenuToggle(){
+    this.isMenuOpen = !this.isMenuOpen;
+    if(!this.isMenuOpen)
+    {
+      this.contentMargin=50;
+    }
+    else{
+      this.contentMargin=400;
+    }
+  }
+  Notes(){
+    this.route.navigateByUrl('dashboard/notes');
+  }
 
+  Trash(){
+    this.route.navigateByUrl('dashboard/trash');
+  }
+  Archive(){
+    this.route.navigateByUrl('dashboard/archive')
+  }
 
 }

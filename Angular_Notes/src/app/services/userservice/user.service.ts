@@ -77,5 +77,60 @@ constructor(private httpService:HttpService) { }
     };
     console.log("somthing");
     return this.httpService.getService('/Notes',true,httpOptions); 
+  }//
+  getSingleNote(token: any,id:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Bearer '+token,
+        
+      })
+    };
+    console.log("somthing");
+    return this.httpService.getService('/Notes/SingleNoteOfUser?Note_Id='+id,true,httpOptions); 
   }
+
+  updateSingleNote(token: any,id:any,reqData: { title: any; message: any; }){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Bearer '+token,
+        
+      })
+    };
+    console.log("somthing");
+    return this.httpService.putService("/Notes/"+id,reqData,true,httpOptions); 
+  }
+  DeleteSingleNote(token: any,id:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Bearer '+token,
+        
+      })
+    };
+    console.log("somthing");
+    return this.httpService.deleteService("/Notes/"+id,true,httpOptions); 
+  }
+  TrahNotes(token: any,id:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Bearer '+token,
+        
+      })
+    };
+    return this.httpService.putService("/Notes/Trash?Id="+id,false,true,httpOptions); 
+  }
+  archiveNotes(token: any,id:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: 'Bearer '+token,
+        
+      })
+    };
+    return this.httpService.putService("/Notes/Archive?Id="+id,false,true,httpOptions); 
+  }
+
 }
